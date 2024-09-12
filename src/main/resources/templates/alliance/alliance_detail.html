@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>mehi</title>
+
+  <!--  css -->
+  <link rel="stylesheet" href="../../assets/css/index.css">
+  <script src="/js/jquery-3.6.0.min.js"></script>
+  <script src="/js/bootstrap.bundle.min.js"></script>
+<!--  <script src="../../static/js/boardscript.js"></script>-->
+
+
+</head>
+<body>
+<div class="common">
+  <header class="main-header">
+    <div class="max-conts">
+      <div>
+        <nav>
+          <h1 class="logo-s"><a href="#">logo</a></h1>
+          <ul class="pc-conts">
+            <li><a href="#">채용</a></li>
+            <li><a href="#">이력서</a></li>
+            <li><a href="#">지원현황</a></li>
+            <li><a href="#">기업정보</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="gap-5">
+        <div class="d-flex align-items-center gap-3">
+          <div class="form-search">
+            <button class="icon-bx" data-bs-toggle="modal" data-bs-target="#searchModal"></button>
+          </div>
+
+          <div class="d-flex align-items-center hd-right pc-conts">
+            <a href="#" class="btn-st-nor-34 st-2">이력서 등록</a>
+            <a href="#" class="btn-st-nor-34 st-3">기업 서비스</a>
+          </div>
+        </div>
+        <div class="link-btn">
+          <a href="#">로그인</a>
+          <a href="#">회원가입</a>
+        </div>
+        <div class="menu-btn mobile-conts">
+          <button class="menu-trigger" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                  aria-controls="offcanvasRight" aria-label="Close">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+<!--        &lt;!&ndash;     모바일 menu &ndash;&gt;-->
+<!--        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel"-->
+<!--             data-bs-backdrop="false">-->
+<!--          <div class="offcanvas-body">-->
+<!--            <ul class="mobile-nav">-->
+<!--              <li class="" aria-current="true">-->
+<!--                <button class="btn btn-primary" type="button" data-bs-toggle="collapse"-->
+<!--                        data-bs-target="#multiCollapseExample1" aria-expanded="false"-->
+<!--                        aria-controls="multiCollapseExample1">-->
+<!--                  <i class="icon icon_01"></i>HOME-->
+<!--                </button>-->
+<!--                &lt;!&ndash;                <ul class="collapse multi-collapse" id="multiCollapseExample1">&ndash;&gt;-->
+<!--                &lt;!&ndash;                  <li>&ndash;&gt;-->
+<!--                &lt;!&ndash;                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">DEPTH2</button>&ndash;&gt;-->
+<!--                &lt;!&ndash;                    <ul class="collapse multi-collapse" id="multiCollapseExample2">&ndash;&gt;-->
+<!--                &lt;!&ndash;                      <li>&ndash;&gt;-->
+<!--                &lt;!&ndash;                        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample3" aria-expanded="false" aria-controls="multiCollapseExample3">DEPTH3</button>&ndash;&gt;-->
+<!--                &lt;!&ndash;                      </li>&ndash;&gt;-->
+<!--                &lt;!&ndash;                    </ul>&ndash;&gt;-->
+<!--                &lt;!&ndash;                  </li>&ndash;&gt;-->
+<!--                &lt;!&ndash;                </ul>&ndash;&gt;-->
+<!--              </li>-->
+<!--              <li class="" aria-current="true">-->
+<!--                <button class="btn btn-primary" type="button" data-bs-toggle="collapse"-->
+<!--                        data-bs-target="#multiCollapseExample2" aria-expanded="false"-->
+<!--                        aria-controls="multiCollapseExample2">-->
+<!--                  <i class="icon  icon_02"></i>채용-->
+<!--                </button>-->
+<!--              </li>-->
+<!--              <li class="" aria-current="true">-->
+<!--                <button class="btn btn-primary" type="button" data-bs-toggle="collapse"-->
+<!--                        data-bs-target="#multiCollapseExample3" aria-expanded="false"-->
+<!--                        aria-controls="multiCollapseExample3">-->
+<!--                  <i class="icon  icon_03"></i>이력서-->
+<!--                </button>-->
+<!--              </li>-->
+<!--              <li class="" aria-current="true">-->
+<!--                <button class="btn btn-primary" type="button" data-bs-toggle="collapse"-->
+<!--                        data-bs-target="#multiCollapseExample4" aria-expanded="false"-->
+<!--                        aria-controls="multiCollapseExample4">-->
+<!--                  <i class="icon  icon_04"></i>지원현황-->
+<!--                </button>-->
+<!--              </li>-->
+<!--              <li class="" aria-current="true">-->
+<!--                <button class="btn btn-primary" type="button" data-bs-toggle="collapse"-->
+<!--                        data-bs-target="#multiCollapseExample5" aria-expanded="false"-->
+<!--                        aria-controls="multiCollapseExample5">-->
+<!--                  <i class="icon  icon_05"></i>기업정보-->
+<!--                </button>-->
+<!--              </li>-->
+<!--            </ul>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        &lt;!&ndash;  // 모바일 menu &ndash;&gt;-->
+      </div>
+    </div>
+  </header>
+  <!-- main-header Modal -->
+  <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen search-modal">
+      <div class="modal-content ">
+        <div class="max-conts">
+          <div class="modal-header">
+            <h1 class="logo-s"><a href="#">logo</a></h1>
+            <div class="flex-grow-1 form-search">
+              <label for="input01" class="hidden">회사, 채용공고 검색</label>
+              <input type="text" id="input01" name="input01" placeholder="회사, 채용공고 검색">
+              <button class="icon-bx"></button>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body box-gap-5 flex-column">
+            <div>
+              <div class="d-flex align-items-center justify-content-between">
+                <h3 class="sub-txt">최근 검색어</h3>
+                <button class="g-txt">전체삭제</button>
+              </div>
+              <ul class="selected-tag">
+                <li><span>BMWBMWBMWBMWBMW</span>
+                  <button></button>
+                </li>
+                <li><span>모바일개발</span>
+                  <button></button>
+                </li>
+                <li><span>취업 부트캠프</span>
+                  <button></button>
+                </li>
+                <li><span>취준생</span>
+                  <button></button>
+                </li>
+                <li><span>한국지비에스</span>
+                  <button></button>
+                </li>
+                <li><span>애니마인드코리아</span>
+                  <button></button>
+                </li>
+                <li><span>비전공</span>
+                  <button></button>
+                </li>
+                <li><span>오늘마감</span>
+                  <button></button>
+                </li>
+                <li><span>데이터분석가</span>
+                  <button></button>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="sub-txt">추천 검색어</h3>
+              <ul class="selected-tag nor">
+                <li><span>#BMWBMWB모바일개발MWBMWBMW</span>
+                  <button></button>
+                </li>
+                <li><span>#모바일개발</span>
+                  <button></button>
+                </li>
+                <li><span>#취업 부트캠프</span>
+                  <button></button>
+                </li>
+                <li><span>#취준생</span>
+                  <button></button>
+                </li>
+                <li><span>#한국지비에스</span>
+                  <button></button>
+                </li>
+                <li><span>#애니마인드코리아</span>
+                  <button></button>
+                </li>
+                <li><span>#비전공</span>
+                  <button></button>
+                </li>
+                <li><span>#오늘마감</span>
+                  <button></button>
+                </li>
+                <li><span>#데이터분석가</span>
+                  <button></button>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <div class="d-flex align-items-end gap-2">
+                <h3 class="sub-txt">인기 검색어</h3>
+                <button class="g-txt">22:00 기준</button>
+              </div>
+              <ul class="rank-list">
+                <li><a href="#">프론트엔드</a></li>
+                <li><a href="#">모바일개발</a></li>
+                <li><a href="#">데이터분석</a></li>
+                <li><a href="#">블록체인</a></li>
+                <li><a href="#">iOS</a></li>
+                <li><a href="#">무신사</a></li>
+                <li><a href="#">채용담당</a></li>
+                <li><a href="#">프로그램기획</a></li>
+                <li><a href="#">안드로이드</a></li>
+                <li><a href="#">0원 취업 지원 교육 모음</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="max-conts common-layout box-gap-5">
+    <p class="sub-tit text-center">광고 / 제휴 문의</p>
+    <div class="search-result ad-page">
+      <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <button class="nav-link" id="cs_01" data-bs-toggle="tab" data-bs-target="#nav-cs_01"
+                  type="button" role="tab" aria-controls="nav-cs_01" aria-selected="false">광고 문의
+          </button>
+          <button class="nav-link active" id="cs_02" data-bs-toggle="tab" data-bs-target="#nav-cs_02" type="button"
+                  role="tab" aria-controls="nav-set_02" aria-selected="false">제휴 문의
+          </button>
+        </div>
+      </nav>
+      <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-cs_01" role="tabpanel" aria-labelledby="cs_01" tabindex="0">
+          <div class="cs-center">
+
+            <table>
+            <div class="notice-desc">
+              <div class="noti-tit" >
+                <div th:text="${board.boardTitle}"></div>
+              </div>
+              <div class="ask-detail">
+                <div class="ask-info">
+                  <dl>
+                    <dt>이름 :</dt>
+                    <dd th:text="${board.boardWriter}"></dd>
+                  </dl>
+                  <dl>
+                    <dt>연락처 :</dt>
+                    <dd th:text="${board.boardTel}"></dd>
+                  </dl>
+                  <dl>
+                    <dt>등록일 :</dt>
+                    <dd th:text="${board.boardCreatedTime}"></dd>
+                  </dl>
+                  <dl>
+                    <dt>이메일 :</dt>
+                    <dd th:text="${board.boardEmail}"></dd>
+                  </dl>
+
+                  <dl>
+                    <dt>
+                      <a href="#" download="첨부파일다운로드.txt" class="file-down">첨부파일다운로드</a>
+                    </dt>
+                    <dd></dd>
+                  </dl>
+                </div>
+                <div class="ask-conts">
+                  <div class="ask-txt" th:text="${board.boardContents}">
+
+                  </div>
+
+                  <div class="reply-txt" id="comment-write">
+                    <input type="text" id="commentWriter" placeholder="작성자" width="50px">
+                    <input type="text" id="commentContents" placeholder="내용">
+                    <button class="btn-st-brd-50" id="comment-write-btn" onclick="commentWrite()">댓글작성</button>
+                  </div>
+
+<!--                  댓글 출력-->
+                  <div class="reply-txt" id="comment-list">
+                    <table>
+                      <tr>
+                        <th>댓글번호</th>
+                        <th>작성자</th>
+                        <th>내용</th>
+                        <th>작성시간</th>
+                      </tr>
+                      <tr th:each="comment: ${commentList}">
+                        <td th:text="${comment.id}"></td>
+                        <td th:text="${comment.commentWriter}"></td>
+                        <td th:text="${comment.commentContents}"></td>
+                        <td th:text="${comment.commentCreatedTime}"></td>
+                      </tr>
+                    </table>
+                  </div>
+<!--                  <div class="reply-txt">-->
+<!--                    <h4>답변</h4>-->
+<!--                    <p>-->
+<!--                      상품결제하기 창에서 원하는 공고를 선택하여 결제할 수 있으며, 이후공고 변경은 어려운 점 양해 부탁드립니다.-->
+<!--                      이에, 해당 결제취소 후 다시 결제 진행해주시길 요청 드리며, 결제취소를 원하시는 경우 다시 한번 문의 남겨 주시기 바랍니다.-->
+<!--                    </p>-->
+<!--                    <dl>-->
+<!--                      <dt>등록일 :</dt>-->
+<!--                      <dd>2021.10.21</dd>-->
+<!--                    </dl>-->
+<!--                  </div>-->
+                </div>
+              </div>
+            </div>
+            </table>
+          </div>
+          <div class="btn-gp btn-center">
+            <button class="btn-st-brd-50" onclick="updateReq()">수정</button>
+            <button class="btn-st-brd-50" onclick="deleteReq()">삭제</button>
+            <button class="btn-st-nor-50 st-2" onclick="listReq()">목록</button>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="nav-cs_02" role="tabpanel" aria-labelledby="cs_02" tabindex="0">
+          <div class="cs-center box-gap-2 flex-column">
+            <div class="d-flex justify-content-end">
+              <div class="dropdown filter">
+                <button class="dropdown-btn dropdown-toggle" type="button" id="dropdownMenuButton02"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                  정렬
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton03">
+                  <li><a class="dropdown-item" href="#" data-value="최신순">답변 완료</a></li>
+                  <li><a class="dropdown-item" href="#" data-value="인기순">답변 대기</a></li>
+                </ul>
+              </div>
+            </div>
+            <table class="common-table mo-table">
+              <colgroup>
+                <col style="width: 8.333%">
+                <col style="width: 41.66%">
+                <col style="width: 16.66%">
+                <col style="width: 16.66%">
+                <col style="width: 16.66%">
+              </colgroup>
+              <thead>
+              <tr>
+                <th></th>
+                <th>내용</th>
+                <th>이메일</th>
+                <th>게시 일자</th>
+                <th>상태</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td class="num">1</td>
+                <td><a href="#" class="ellipsis">결제상품을 변경할 수 있나요?</a></td>
+                <td>hjkim@idevel.kr</td>
+                <td>2023. 12. 30</td>
+                <td><span class="noti-badge btn-blue">답변 완료</span></td>
+              </tr>
+              <tr>
+                <td class="num">2</td>
+                <td><a href="#" class="ellipsis">신용카드 결제가 중복으로 된 경우 취소를 어떻게 하나요?</a></td>
+                <td>hjkim@idevel.kr</td>
+                <td>2023. 12. 30</td>
+                <td><span class="noti-badge btn-pink">답변 대기</span></td>
+              </tr>
+              <tr>
+                <td class="num">3</td>
+                <td><a href="#" class="ellipsis">세금계산서 발행 신청은 어떻게 하나요?</a></td>
+                <td>hjkim@idevel.kr</td>
+                <td>2023. 12. 30</td>
+                <td><span class="noti-badge btn-blue">답변 완료</span></td>
+              </tr>
+              <tr>
+                <td class="num">4</td>
+                <td><a href="#" class="ellipsis">결제상품을 변경할 수 있나요?</a></td>
+                <td>hjkim@idevel.kr</td>
+                <td>2023. 12. 30</td>
+                <td><span class="noti-badge btn-pink">답변 대기</span></td>
+              </tr>
+              <tr>
+                <td class="num">5</td>
+                <td><a href="#" class="ellipsis">신용카드 결제가 중복으로 된 경우 취소를 어떻게 하나요?</a></td>
+                <td>hjkim@idevel.kr</td>
+                <td>2023. 12. 30</td>
+                <td><span class="noti-badge btn-pink">답변 대기</span></td>
+              </tr>
+              <tr>
+                <td class="num">6</td>
+                <td><a href="#" class="ellipsis">세금계산서 발행 신청은 어떻게 하나요?</a></td>
+                <td>hjkim@idevel.kr</td>
+                <td>2023. 12. 30</td>
+                <td><span class="noti-badge btn-pink">답변 대기</span></td>
+              </tr>
+              </tbody>
+            </table>
+            <div class="btn-type">
+              <a href="#" class="regi-btn">등록</a>
+            </div>
+            <div class="paging">
+              <a href="#">
+                <svg width="13" height="22" viewBox="0 0 13 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 21L2 11L12 1" stroke="#333333" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </a>
+              <a href="#" class="active">1</a>
+              <a href="#">2</a>
+              <a href="#">3</a>
+              <a href="#">4</a>
+              <a href="#">5</a>
+              <a href="#">
+                <svg width="13" height="22" viewBox="0 0 13 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1L11 11L1 21" stroke="#333333" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="inner">
+      <div class="d-flex justify-content-between flex-wrap gap-3">
+        <div class="d-flex flex-column gap-20">
+          <div class="d-flex ft-menu">
+            <h2 class="logo">
+              <a href="javascript:void(0);">
+                <img src="../../assets/images/bm_logo_x135.png" alt="mehi">
+              </a>
+            </h2>
+            <ul class="d-flex  align-items-center">
+              <li><a href="javascript:void(0);">기업소개</a></li>
+              <li><a href="javascript:void(0);">광고/제휴 문의</a></li>
+              <li><a href="javascript:void(0);">고객센터</a></li>
+              <li><a href="javascript:void(0);">이용약관</a></li>
+              <li><a href="javascript:void(0);">개인정보처리방침</a></li>
+            </ul>
+          </div>
+
+          <ul class="biz-info">
+            <li>(주)비엠더코리아</li>
+            <li>경기도 하남시 미사강변한강로 135, 다동 940호(망월동, 스카이폴리스)</li>
+            <li>(우편번호:12902)</li>
+            <li>TEL. 031-811-7384 / FAX. 031-811-7393</li>
+          </ul>
+        </div>
+        <ul class="d-flex cntc">
+          <li><a href="javascript:void(0);">CONTECT US</a></li>
+          <li><a href="javascript:void(0);">이메일 무단수집 거부</a></li>
+        </ul>
+      </div>
+      <div></div>
+    </div>
+  </footer>
+</div>
+</body>
+<script>
+  const id = [[${board.id}]];  // 임시로 id를 1로 설정
+  console.log("게시글 ID: ", id);  // commentWrite 함수 안에서 id 값 확인
+  // const id = /*[[${board.id}]]*/ 1;  // 임시로 id를 1로 설정
+
+  const commentWrite = () => {
+    const writer = document.getElementById("commentWriter").value;
+    const contents = document.getElementById("commentContents").value;
+    console.log("작성자: ", writer);
+    console.log("내용: ", contents);
+    const id = [[${board.id}]];
+    $.ajax({
+      // 요청방식: post, 요청주소: /comment/save, 요청데이터: 작성자, 작성내용, 게시글번호
+      type: "post",
+      url: "/comment/save",
+      data: {
+        "commentWriter": writer,
+        "commentContents": contents,
+        "boardId": id
+      },
+      success: function (res) {
+        console.log("요청성공", res);
+        let output = "<table>";
+        output += "<tr><th>댓글번호</th>";
+        output += "<th>작성자</th>";
+        output += "<th>내용</th>";
+        output += "<th>작성시간</th></tr>";
+        for (let i in res) {
+          output += "<tr>";
+          output += "<td>" + res[i].id + "</td>";
+          output += "<td>" + res[i].commentWriter + "</td>";
+          output += "<td>" + res[i].commentContents + "</td>";
+          output += "<td>" + res[i].commentCreatedTime + "</td>";
+          output += "</tr>";
+        }
+        output += "</table>";
+        document.getElementById('comment-list').innerHTML = output;
+        document.getElementById('commentWriter').value = '';
+        document.getElementById('commentContents').value = '';
+      },
+      error: function (err) {
+        console.log("요청실패", err);
+      }
+    });
+
+  }
+</script>
+<script>
+  const listReq = () => {
+    const page = [[${page}]];
+    console.log("페이지 번호?? :" + page);
+    location.href = "/board/paging?page="+page;
+  }
+  const updateReq = () => {
+    console.log("수정 요청");
+    const id = [[${board.id}]];
+    location.href = "/board/update/" + id;
+  }
+  const deleteReq = () => {
+    console.log("삭제 요청");
+    const id = [[${board.id}]];
+    location.href = "/board/delete/" + id;
+  }
+
+</script>
+
+</html>
+

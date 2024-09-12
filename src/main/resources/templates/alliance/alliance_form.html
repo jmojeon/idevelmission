@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>mehi</title>
+
+  <!--  css -->
+  <link rel="stylesheet" href="../../assets/css/index.css">
+  <script src="/js/jquery-3.6.0.min.js"></script>
+  <script src="/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/script.js"></script>
+</head>
+<body>
+<div class="common">
+  <header class="main-header">
+    <div class="max-conts">
+      <div>
+        <nav>
+          <h1 class="logo-s"><a href="#">logo</a></h1>
+          <ul class="pc-conts">
+            <li><a href="#">채용</a></li>
+            <li><a href="#">이력서</a></li>
+            <li><a href="#">지원현황</a></li>
+            <li><a href="#">기업정보</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="gap-5">
+        <div class="d-flex align-items-center gap-3">
+          <div class="form-search">
+            <button class="icon-bx" data-bs-toggle="modal" data-bs-target="#searchModal"></button>
+          </div>
+
+          <div class="d-flex align-items-center hd-right pc-conts">
+            <a href="#" class="btn-st-nor-34 st-2">이력서 등록</a>
+            <a href="#" class="btn-st-nor-34 st-3">기업 서비스</a>
+          </div>
+        </div>
+        <div class="link-btn">
+          <a href="#">로그인</a>
+          <a href="#">회원가입</a>
+        </div>
+        <div class="menu-btn mobile-conts">
+          <button class="menu-trigger" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                  aria-controls="offcanvasRight" aria-label="Close">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+<!--        &lt;!&ndash;     모바일 menu &ndash;&gt;-->
+<!--        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel"-->
+<!--             data-bs-backdrop="false">-->
+<!--          <div class="offcanvas-body">-->
+<!--            <ul class="mobile-nav">-->
+<!--              <li class="" aria-current="true">-->
+<!--                <button class="btn btn-primary" type="button" data-bs-toggle="collapse"-->
+<!--                        data-bs-target="#multiCollapseExample1" aria-expanded="false"-->
+<!--                        aria-controls="multiCollapseExample1">-->
+<!--                  <i class="icon icon_01"></i>HOME-->
+<!--                </button>-->
+<!--                &lt;!&ndash;                <ul class="collapse multi-collapse" id="multiCollapseExample1">&ndash;&gt;-->
+<!--                &lt;!&ndash;                  <li>&ndash;&gt;-->
+<!--                &lt;!&ndash;                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">DEPTH2</button>&ndash;&gt;-->
+<!--                &lt;!&ndash;                    <ul class="collapse multi-collapse" id="multiCollapseExample2">&ndash;&gt;-->
+<!--                &lt;!&ndash;                      <li>&ndash;&gt;-->
+<!--                &lt;!&ndash;                        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample3" aria-expanded="false" aria-controls="multiCollapseExample3">DEPTH3</button>&ndash;&gt;-->
+<!--                &lt;!&ndash;                      </li>&ndash;&gt;-->
+<!--                &lt;!&ndash;                    </ul>&ndash;&gt;-->
+<!--                &lt;!&ndash;                  </li>&ndash;&gt;-->
+<!--                &lt;!&ndash;                </ul>&ndash;&gt;-->
+<!--              </li>-->
+<!--              <li class="" aria-current="true">-->
+<!--                <button class="btn btn-primary" type="button" data-bs-toggle="collapse"-->
+<!--                        data-bs-target="#multiCollapseExample2" aria-expanded="false"-->
+<!--                        aria-controls="multiCollapseExample2">-->
+<!--                  <i class="icon  icon_02"></i>채용-->
+<!--                </button>-->
+<!--              </li>-->
+<!--              <li class="" aria-current="true">-->
+<!--                <button class="btn btn-primary" type="button" data-bs-toggle="collapse"-->
+<!--                        data-bs-target="#multiCollapseExample3" aria-expanded="false"-->
+<!--                        aria-controls="multiCollapseExample3">-->
+<!--                  <i class="icon  icon_03"></i>이력서-->
+<!--                </button>-->
+<!--              </li>-->
+<!--              <li class="" aria-current="true">-->
+<!--                <button class="btn btn-primary" type="button" data-bs-toggle="collapse"-->
+<!--                        data-bs-target="#multiCollapseExample4" aria-expanded="false"-->
+<!--                        aria-controls="multiCollapseExample4">-->
+<!--                  <i class="icon  icon_04"></i>지원현황-->
+<!--                </button>-->
+<!--              </li>-->
+<!--              <li class="" aria-current="true">-->
+<!--                <button class="btn btn-primary" type="button" data-bs-toggle="collapse"-->
+<!--                        data-bs-target="#multiCollapseExample5" aria-expanded="false"-->
+<!--                        aria-controls="multiCollapseExample5">-->
+<!--                  <i class="icon  icon_05"></i>기업정보-->
+<!--                </button>-->
+<!--              </li>-->
+<!--            </ul>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        &lt;!&ndash;  // 모바일 menu &ndash;&gt;-->
+      </div>
+    </div>
+  </header>
+  <!-- main-header Modal -->
+  <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen search-modal">
+      <div class="modal-content ">
+        <div class="max-conts">
+          <div class="modal-header">
+            <h1 class="logo-s"><a href="#">logo</a></h1>
+            <div class="flex-grow-1 form-search">
+              <label for="input01" class="hidden">회사, 채용공고 검색</label>
+              <input type="text" id="input01" name="input01" placeholder="회사, 채용공고 검색">
+              <button class="icon-bx"></button>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body box-gap-5 flex-column">
+            <div>
+              <div class="d-flex align-items-center justify-content-between">
+                <h3 class="sub-txt">최근 검색어</h3>
+                <button class="g-txt">전체삭제</button>
+              </div>
+              <ul class="selected-tag">
+                <li><span>BMWBMWBMWBMWBMW</span>
+                  <button></button>
+                </li>
+                <li><span>모바일개발</span>
+                  <button></button>
+                </li>
+                <li><span>취업 부트캠프</span>
+                  <button></button>
+                </li>
+                <li><span>취준생</span>
+                  <button></button>
+                </li>
+                <li><span>한국지비에스</span>
+                  <button></button>
+                </li>
+                <li><span>애니마인드코리아</span>
+                  <button></button>
+                </li>
+                <li><span>비전공</span>
+                  <button></button>
+                </li>
+                <li><span>오늘마감</span>
+                  <button></button>
+                </li>
+                <li><span>데이터분석가</span>
+                  <button></button>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="sub-txt">추천 검색어</h3>
+              <ul class="selected-tag nor">
+                <li><span>#BMWBMWB모바일개발MWBMWBMW</span>
+                  <button></button>
+                </li>
+                <li><span>#모바일개발</span>
+                  <button></button>
+                </li>
+                <li><span>#취업 부트캠프</span>
+                  <button></button>
+                </li>
+                <li><span>#취준생</span>
+                  <button></button>
+                </li>
+                <li><span>#한국지비에스</span>
+                  <button></button>
+                </li>
+                <li><span>#애니마인드코리아</span>
+                  <button></button>
+                </li>
+                <li><span>#비전공</span>
+                  <button></button>
+                </li>
+                <li><span>#오늘마감</span>
+                  <button></button>
+                </li>
+                <li><span>#데이터분석가</span>
+                  <button></button>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <div class="d-flex align-items-end gap-2">
+                <h3 class="sub-txt">인기 검색어</h3>
+                <button class="g-txt">22:00 기준</button>
+              </div>
+              <ul class="rank-list">
+                <li><a href="#">프론트엔드</a></li>
+                <li><a href="#">모바일개발</a></li>
+                <li><a href="#">데이터분석</a></li>
+                <li><a href="#">블록체인</a></li>
+                <li><a href="#">iOS</a></li>
+                <li><a href="#">무신사</a></li>
+                <li><a href="#">채용담당</a></li>
+                <li><a href="#">프로그램기획</a></li>
+                <li><a href="#">안드로이드</a></li>
+                <li><a href="#">0원 취업 지원 교육 모음</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="max-conts common-layout box-gap-5">
+    <p class="sub-tit text-center">광고 / 제휴 문의</p>
+    <div class="search-result ad-page">
+      <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <button class="nav-link" id="cs_01" data-bs-toggle="tab" data-bs-target="#nav-cs_01"
+                  type="button" role="tab" aria-controls="nav-cs_01" aria-selected="false">광고 문의
+          </button>
+          <button class="nav-link active" id="cs_02" data-bs-toggle="tab" data-bs-target="#nav-cs_02" type="button"
+                  role="tab" aria-controls="nav-set_02" aria-selected="false">제휴 문의
+          </button>
+        </div>
+      </nav>
+      <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade" id="nav-cs_01" role="tabpanel" aria-labelledby="cs_01" tabindex="0">
+          <div class="ad-page cs-center box-gap-5 flex-column">
+            <div class="d-flex flex-column">
+              <div class="form-block">
+                <div class="form-multi">
+                  <div class="form">
+                    <h4><span>*</span>기업명</h4>
+                    <div class="form-con"><input type="text" placeholder="이메일을 입력해주세요." value=""></div>
+                  </div>
+                  <div class="form">
+                    <h4><span>*</span>연락처</h4>
+                    <div type="tel" class="form-con"><input type="text" placeholder="연락처를 입력해주세요." value=""></div>
+                  </div>
+                </div>
+                <div class="form-multi">
+                  <div class="form">
+                    <h4><span>*</span>이메일</h4>
+                    <div type="email" class="form-con"><input type="text" placeholder="이메일을 입력해주세요." value=""></div>
+                  </div>
+                  <div class="form">
+                    <h4><span>*</span>담당자명</h4>
+                    <div class="form-con"><input type="text" placeholder="연락처를 입력해주세요." value=""></div>
+                  </div>
+                </div>
+                <div class="form-multi">
+                  <div class="form">
+                    <h4><span>*</span>집행 검토 상품</h4>
+                    <div class="form-con">
+                      <select class="form-select" aria-label="Default select example">
+                        <option selected>선택</option>
+                        <option value="1">선택</option>
+                        <option value="2">선택</option>
+                        <option value="3">선택</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form">
+                    <h4><span>*</span>희망 게재일</h4>
+                    <div class="form-con">
+                      <div class="colum multi-cal">
+                        <label for="START"><input type="date" class="" id="START"></label>
+                        ~
+                        <label for="END"><input type="date" class="" id="END"></label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form">
+                  <h4><span>*</span>문의 사항</h4>
+                  <div class="form-con">
+                    <textarea name="" id="" placeholder="내용을 입력해주세요."></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="btn-gp btn-center">
+              <button class="btn-st-nor-50 st-2">등록</button>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade show active" id="nav-cs_02" role="tabpanel" aria-labelledby="cs_02" tabindex="0">
+          <div class="cs-center box-gap-5 flex-column">
+            <form action="/board/save" method="post" enctype="multipart/form-data">
+            <div class="d-flex flex-column">
+              <div class="form-block">
+                <div class="form-multi">
+                  <div class="form">
+                    <h4><span>*</span>이름</h4>
+                    <div class="form-con"><input type="text" placeholder="이름을 입력해주세요." name="boardWriter" aria-label="name" aria-describedby="input-name" required></div>
+                  </div>
+                  <div class="form">
+                    <h4><span></span>연락처</h4>
+                    <div class="form-con"><input type="tel" placeholder="연락처를 입력해주세요." name="boardTel" aria-label="contact" aria-describedby="contact"></div>
+                  </div>
+                </div>
+                <div class="form-multi">
+                  <div class="form">
+                    <h4><span>*</span>이메일</h4>
+                    <div class="form-con"><input type="email" placeholder="이메일을 입력해주세요." name="boardEmail"  aria-label="email" aria-describedby="input-email" required></div>
+                  </div>
+                  <div class="form"></div>
+                </div>
+                <div class="form">
+                  <h4><span>*</span>제목</h4>
+                  <div class="form-con"><input type="text" placeholder="제목을 입력해주세요." name="boardTitle" aria-label="input_tit" aria-describedby="input_tit" required></div>
+                </div>
+                <div class="form">
+                  <h4><span>*</span>내용</h4>
+                  <div class="form-con">
+                    <textarea name="boardContents"  placeholder="내용을 입력해주세요." aria-label="textarea"
+                              aria-describedby="textarea" required></textarea>
+                  </div>
+                </div>
+                <div class="form">
+                  <h4>파일첨부</h4>
+                  <div class="form-con filebox">
+                    <input class="upload-name" type="file" name="boardFile" accept=".jpg,.jpeg,.png,.gif,.xls,.xlsx" multiple placeholder="10MB 이하의 파일만 등록 가능합니다."> <br>
+                    <label for="file">파일 첨부</label>
+                    <input type="file" id="file">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="btn-gp btn-center">
+              <button class="btn-st-nor-50 st-2">등록</button>
+              <button class="btn-st-nor-50" type="button" onclick="reqCan()">등록취소</button>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="inner">
+      <div class="d-flex justify-content-between flex-wrap gap-3">
+        <div class="d-flex flex-column gap-20">
+          <div class="d-flex ft-menu">
+            <h2 class="logo">
+              <a href="javascript:void(0);">
+                <img src="../../assets/images/bm_logo_x135.png" alt="mehi">
+              </a>
+            </h2>
+            <ul class="d-flex  align-items-center">
+              <li><a href="javascript:void(0);">기업소개</a></li>
+              <li><a href="javascript:void(0);">광고/제휴 문의</a></li>
+              <li><a href="javascript:void(0);">고객센터</a></li>
+              <li><a href="javascript:void(0);">이용약관</a></li>
+              <li><a href="javascript:void(0);">개인정보처리방침</a></li>
+            </ul>
+          </div>
+
+          <ul class="biz-info">
+            <li>(주)비엠더코리아</li>
+            <li>경기도 하남시 미사강변한강로 135, 다동 940호(망월동, 스카이폴리스)</li>
+            <li>(우편번호:12902)</li>
+            <li>TEL. 031-811-7384 / FAX. 031-811-7393</li>
+          </ul>
+        </div>
+        <ul class="d-flex cntc">
+          <li><a href="javascript:void(0);">CONTECT US</a></li>
+          <li><a href="javascript:void(0);">이메일 무단수집 거부</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</div>
+</body>
+<script>
+  const reqCan = () => {
+    console.log("수정 취소 요청");
+    const page = [[${page}]] ;
+    console.log("페이지 번호" + page);
+    location.href = "/board/paging?page="+page;
+  }
+
+  document.querySelector('input[name="boardTel"]').addEventListener('input', function (event) {
+    const pattern = /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/;
+    if (!pattern.test(event.target.value)) {
+      event.target.setCustomValidity("올바른 전화번호 형식을 입력하세요 (예: 010-1234-5678)");
+    } else {
+      event.target.setCustomValidity(""); // 올바른 형식이면 오류 메시지 제거
+    }
+  });
+</script>
+
+</html>
+

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>id</th>
+        <th>제 목</th>
+        <th>작성자</th>
+        <th>날짜</th>
+        <th>조회수</th>
+    </tr>
+    <tr th:each="board: ${boardList}">
+        <td th:text="${board.id}"></td>
+        <td><a th:href="@{|/board/${board.id}|}" th:text="${board.boardTitle}"></a></td>
+<!--        ||를 사용하지 않으면 경로가 다르게 들어감-->
+        <td th:text="${board.boardWriter}"></td>
+        <td th:text="*{#temporals.format(board.boardCreatedTime, 'yyyy-MM-dd HH:mm:ss')}"></td>
+        <td th:text="${board.boardHits}"></td>
+    </tr>
+</table>
+</body>
+</html>

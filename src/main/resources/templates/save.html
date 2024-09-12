@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Save</title>
+</head>
+<body>
+    <!-- 실제파일이 넘어오기위한 속성 enctype="multipart/form-data-->
+    <form action="/board/save" method="post" enctype="multipart/form-data">
+        작성자 : <input type="text" name="boardWriter"> <br>
+        비밀번호: <input type="text" name="boardPass"> <br>
+        제 목: <input type="text" name="boardTitle"> <br>
+        내 용: <textarea name="boardContents" cols="30" rows="10"></textarea> <br>
+        파일추가: <input type="file" name="boardFile" accept=".jpg,.jpeg,.png,.gif,.xls,.xlsx" multiple> <br>
+        <input type="submit" value="글작성">
+    </form>
+</body>
+
+</html>
